@@ -111,11 +111,9 @@ export default class LazyLoad extends Component {
     const { visible } = this.state;
 
     const elStyles = { height, width };
-    const elClasses = (
-      'LazyLoad' +
-      (visible ? ' is-visible' : '') +
-      (className ? ` ${className}` : '')
-    );
+    const classNameLazyLoad = _props2.className ? _props2.className + 'LazyLoad' : 'LazyLoad',
+          classNameVisible = _props2.className ? _props2.className + 'Visible' : 'is-visible',
+    var elClasses = classNameLazyLoad + (visible ? ' ' + classNameVisible : '') + (className ? ' ' + className : '');
 
     return React.createElement(this.props.elementType, {
       className: elClasses,
